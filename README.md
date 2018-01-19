@@ -1,4 +1,4 @@
-# Machine-Learning-Research-Project
+# Machine Learning Research Project
 
 The use of machine learning techniques to build autonomous agents/systems is becoming more widespread as designing agents by hand is costly.  Moreover, agents often operate in stochastic domains where it may be difficult to identify effective policies/strategies.  However, the increasing use of machine learning techniques (e.g., reinforcement learning, neural nets and deep learning, genetic programming) to build agents has given rise to widespread concerns over whether such systems are safe to deploy.  One reason for this is that some scenarios that threaten safety may be very infrequent and it is hard to ensure that the training set includes enough of these to ensure that safety-preserving behaviors are learned. Another reason is that many machine learning techniques construct their own representations of the domain (e.g., deep learning) and it is hard to ensure that these representations carry the necessary information to ensure safety, and that the resulting policies/strategies are safe. 
 
