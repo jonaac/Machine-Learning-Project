@@ -42,3 +42,44 @@ These are the specific settings our agent will be working in:
 - Environment: Grid world with an initial state, a goal state and craters.
 - Actuators: move forwards, backwards, to the right and to the left.
 - Sensors: Ability of agent to inspect its current state.
+
+## 4. Algorithm
+We will use the reinforcement learning algorithm Q-learning to train our agent to find the most efficient and safety path from it’s initial state to the goal. In order to teach our agent the most safe and optimal solution our Q-learning algorithm will generate an optimal value 𝑄(𝑠, 𝑎) for each state-action pair in the environment that will return the maximum cumulative reward that can be achieved by performing action 𝑎 on state 𝑠, therefore we will be able to determine which action 𝑎 is the most optimal for each possible state 𝑠. Once a user inputs the necessary data we will go through the following steps in order to obtain the safest/optimum path an agent should take from the initial state to the goal state:
+
+1. Build the environment our agent will be acting on from input data
+2. Run Q-learning algorithm to obtain Q(s,a) for all possible state-action pairs
+3. Build Agent based on Q table and Environment
+4. Given initial state provided on input calculate safest possible path.
+
+Assumptions: We will have access to a set of states and actions, a reward matrix and transition matrix. Our algorithm will deal with a non-deterministic environment. For the test bed we will assume that given an action 𝑎, our agent will have a 95% chance of performing that action and a 5% chance of taking any other possible action. We will consider this non-deterministic actions when running our Q-learning algorithm and when building the path of our agent, this is further described in the next
+section.
+```
+Input:
+sF: initial state for our agent.
+S: set of states of size n
+A: set of actions of size m
+R: set of possible rewards/punishments per state
+T: transition matrix of size nxm s.t. T[s3][a] stores the state s4 that an agent would
+arrive to if it were to perform action a on s3
+
+Build Environment based on Input
+# will consider non-deterministic environment when running Q-learning algorithm
+Run Q-learning algorithm on environment and obtain Q(s,a) for each pair state-action.
+Build Agent ag based on Input, Environment and Q-learning algorithm
+While agent is not in goal state then i=0…N
+  Action_to_perform = ag.next_action()
+  # next_action() is ag’s agent function based on each Q(s,a) obtained during Q learning
+  algorithm
+  Action_to_perform = Choose_randomly(Action_to_perform, other_actions, 0.95, 0.15)
+  #safety
+  If (ag.safe_state(Action_to_perform)) then action[i] = Action_to_perform
+  Else then perform ag.next_action() until action obtained is safe
+end while loop
+Output grid map with action[] array of action to go from initial state to goal state
+```
+
+## 5. Safety
+
+The grid map in which the planetary robot will be operating will have a certain number of crates, the safety concern will be to make sure the robot avoids falling into the crates while searching for it’s goal. The crate will represent a dangerous situation by providing a negative reward (punishment) if the robot were to move in it’s direction.
+For other domains, where we do not have crater like in this test bed the algorithm will adapt to any environment as long as there is a negative reward value (punishment) to any state that challenges the safety of the agent.
+Also, our environment will be non-deterministic. So in term of the Q-learning algorithm we will have to take into consideration the probability of taking a specific action (95%) and it’s potential reward of taking a certain action plus the sum of products of the probability the agent will take another action (5% total) and the potential reward of said actions. In terms of building our path once we have performed the Q-learning algorithm, every action we take when building the safest path there is a 5% chance that our agent will perform an action other than the one it’s supposed to take, therefore before taking any steps our agent will have to ensure (with it’s built-in function) that the new state it’s about to land on is safe, and if it’s not safe it should recalculate a new action.
