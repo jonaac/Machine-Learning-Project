@@ -5,7 +5,7 @@ The use of machine learning techniques to build autonomous agents/systems is bec
 Outside of the Machine Learning field, in the area of Formal Methods, there has been a lot of work on techniques to ensure that computer systems satisfy given specifications, including safety.  One relevant line of work addresses verification and synthesis of reactive systems.  Another line of work is concerned with supervision of discrete event systems to ensure that they satisfy a given supervision specification.  There is a lot of interest in exploiting such techniques to ensure safety of machine learning-based systems.
 
 This research project has two main objectives: 
-1. To research the literature on the safety of systems built using machine learning techniques
-2. To build a test-bed for experimenting with agents that include machine learning-derived components and techniques for ensuring that they are safe.
+1. Developed a reinforcement Learning grid-world simulation from scratch (no ML or RL libraries) to experiment and test safety methods for intelligent agents.
+2. To research the literature on the safety of systems built using machine learning techniques
 
 The simulation developed is a planetary robot that moves around in a grid world collecting mineral ore and avoiding falling into craters through machine learning and reinforcement algorithms.
