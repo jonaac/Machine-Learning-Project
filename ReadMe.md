@@ -68,7 +68,9 @@ time/s.
 <p align="center">
 	<img width="250" src="https://jonaac.github.io/img/navigation.gif" />
 </p>
+
 ### Mineral Collection
+
 ```
 MINERAL COLLECTION DOMAIN
 from (0,0) -> move DOWN to: (0,1)
