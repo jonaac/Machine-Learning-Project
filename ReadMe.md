@@ -102,7 +102,7 @@ If you want to develop you own environment to test the algorithms you can genera
 
 ```
 1. n: Number of states, then the set of states to be considered will be [0, n-1]
-2. m: Number of action, then the set of actins to be considered will be [0, m-1]
+2. m: Number of action, then the set of actions to be considered will be [0, m-1]
 3. flag: {0,1} s.t. 1 if the environment is non-deterministic and 0 if it’s deterministic
 4. 𝒔𝟎: Initial state of our agent
 5. 𝒔𝒈𝒐𝒂𝒍: Goal state of out agent
