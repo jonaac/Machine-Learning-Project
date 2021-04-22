@@ -4,9 +4,9 @@ This project is my introduction to RL and safe RL. I develop two grid-world simu
 
 ## Grid-World Environments
 
-Both environments involve 5x4 grids limited by four borders. The agent will be able to move from one grid to another by performing 1 out of 4 possible actions (Up, Down, Left and Right). The first set of grid-world environments are Navigation simulations. It consists of a 'planetary robot' (blue) looking travel from a starting point (purple) to a specified target destination (green) while avoiding to fall into (red).
+Both environments involve 5x4 grids limited by four borders. The agent can move from one grid to another by performing 1 out of 4 possible actions (Up, Down, Left, and Right). The first set of grid-world environments are Navigation simulations. It consists of a planetary robot (blue) looking to travel from a starting point (purple) to a specified target destination (green) while trying not to fall into craters (red).
 
-The second set of grid-world environments are Mineral Collection simulations. It consists of a planetary robot (blue) looking to collect mineral ore (yellow) and bringing it back to its starting position (purple) while avoiding to fall into craters (red). In the case of the Mineral Colection environment the agent will automatically pick up the ore when it reaches it's position.
+The second set of grid-world environments are Mineral Collection simulations. It consists of a planetary robot (blue) looking to collect mineral ore (yellow) and bringing it back to its starting position (purple) while trying not to fall into craters (red). The agent will automatically pick up the ore when it reaches its location.
 
 <p align="center">
 	<img width="250" src="https://jonaac.github.io/img/grid-1.jpg" />
