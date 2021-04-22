@@ -15,45 +15,87 @@ The second set of grid-world environments are Mineral Collection simulations. It
 
 ## Getting Started
 
-A list of all the prerequisites you'll need to run the experiments
-
 ### Prerequisites
-
+A list of all the prerequisites you'll need to run the experiments
 ```
 Python
-Keras
-tensorflow
-xgboost
-sklearn
 numpy
-scipy
-pickle
 ```
 
 ### Files Needed
+Files that will be used to generate each environment.
+```
+/env/input.txt
+/env/input-2.txt
+/env/input-3.txt
+```
 
 ## Running Experiments
 
-For each iteration, I train the original CNN model, I used the train model to generate the CNN+XGBoost model and I compare the accoracy of each model. Download this repository and run the following code for each CNN+XGboost model:
+For each environment run the following code to reproduce the experiment. It will load the .txt file used to generate the environment, run a Q-learning algorithm and deploy the trained agent in the environment.
 
-### Baseline
+### Navigation
 ```
-cd code/baseline/
-python3 cnn.py
-python3 cnn_xgboost.py
-python3 accuracy_baseline.py
+python3 grid-world.py < input.txt
+python3 grid-world.py < input-2.txt
+python3 grid-world.py < input-3.txt
 ```
-### VGG16
+### Mineral Collection
 ```
-cd code/vgg16/
-python3 cnn_vgg16.py
-python3 cnn_vgg16_xgboost.py
-python3 acuoracy_vgg16.py
+python3 mineral-world.py < input.txt
+python3 mineral-world.py < input-2.txt
+python3 mineral-world.py < input-3.txt
 ```
-
 
 ## Results
 
+### Navigation
+```
+NAVIGATION DOMAIN:
+from (0,0) -> move DOWN to: (0,1)
+from (0,1) -> move RIGHT to: (1,1)
+from (1,1) -> move RIGHT to: (2,1)
+from (2,1) -> move RIGHT to: (3,1)
+from (3,1) -> move RIGHT to: (4,1)
+from (4,1) -> move DOWN to: (4,2)
+from (4,2) -> move DOWN to: (4,3)
+from (4,3) -> move LEFT to: (3,3)
+You have found the minerals!
+CONGRATULATIONS!
+SAFETY DATA: Your Rover has fallen 0
+time/s.
+```
+<p align="center">
+	<img width="250" src="https://jonaac.github.io/img/navigation.gif" />
+</p>
+### Mineral Collection
+```
+MINERAL COLLECTION DOMAIN
+from (0,0) -> move DOWN to: (0,1)
+from (0,1) -> move RIGHT to: (1,1)
+from (1,1) -> move RIGHT to: (2,1)
+from (2,1) -> move RIGHT to: (3,1)
+from (3,1) -> move RIGHT to: (4,1)
+from (4,1) -> move DOWN to: (4,2)
+from (4,2) -> move DOWN to: (4,3)
+from (4,3) -> move LEFT to: (3,3)
+You have found the minerals!
+CONGRATULATIONS!
+from (3,3) -> move RIGHT to: (4,3)
+from (4,3) -> move UP to: (4,2)
+from (4,2) -> move UP to: (4,1)
+from (4,1) -> move LEFT to: (3,1)
+from (3,1) -> move LEFT to: (2,1)
+from (2,1) -> move LEFT to: (1,1)
+from (1,1) -> move LEFT to: (0,1)
+from (0,1) -> move UP to: (0,0)
+You are back in BASE with the MINERALS,
+CONGRATULATIONS!
+SAFETY DATA: Your Rover has fallen 0 time/s.
+```
+<p align="center">
+	<img width="250" src="https://jonaac.github.io/img/mineral.gif" />
+</p>
 
 ## Files
 ```
