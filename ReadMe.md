@@ -3,10 +3,8 @@
 This project is my introduction to RL and safe RL. I develop two grid-world simulation and RL algorithms from scratch, no ML or RL libraries, to experiment and test safety methods. After developing, training and deploying the agents I was able to achieve my goal. For every environment the agent was able to learn an optimal policy (shortest route) without falling into any crater.
 
 <p align="center">
-  <ul style="list-style-type:none;">
-    <li style="display:inline-block;"><img width="250" src="https://jonaac.github.io/img/grid-1.jpg"></li>
-    <li style="display:inline-block;"><img width="250" src="https://jonaac.github.io/img/mineral-2.jpg"></li>
-  </ul>
+	<img width="250" src="https://jonaac.github.io/img/grid-1.jpg" />
+	<img width="250" src="https://jonaac.github.io/img/mineral-2.jpg" />
 </p>
 
 ## Getting Started
