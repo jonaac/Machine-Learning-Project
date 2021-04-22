@@ -15,7 +15,7 @@ The second set of grid-world environments are Mineral Collection simulations. It
 
 ## Getting Started
 
-A list of all the prerequisites you'll need to run the experiments and the files the code will generate with the parameters to load the CNN and CNN+XGBoost models for each iteration.
+A list of all the prerequisites you'll need to run the experiments
 
 ### Prerequisites
 
