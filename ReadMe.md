@@ -4,8 +4,8 @@ This project is my introduction to RL and safe RL. I develop two grid-world simu
 
 <p align="center">
   <ul style="list-style-type:none;">
-    <li style="display:inline-block;"><img width="250" src="https://ibb.co/mBYY3Vq"></li>
-    <li style="display:inline-block;"><img width="250" src="https://ibb.co/zQsV4sg"></li>
+    <li style="display:inline-block;"><img width="250" src="https://jonaac.github.io/img/grid-1.jpg"></li>
+    <li style="display:inline-block;"><img width="250" src="https://jonaac.github.io/img/mineral-2.jpg"></li>
   </ul>
 </p>
 
