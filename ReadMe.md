@@ -51,6 +51,7 @@ python3 mineral-world.py < input-3.txt
 
 ### Navigation
 <p><img width="200" src="https://jonaac.github.io/img/navigation.gif" /></p>
+
 ```
 NAVIGATION DOMAIN:
 from (0,0) -> move DOWN to: (0,1)
@@ -69,6 +70,7 @@ time/s.
 
 ### Mineral Collection
 <p><img width="200" src="https://jonaac.github.io/img/mineral.gif" /></p>
+
 ```
 MINERAL COLLECTION DOMAIN
 from (0,0) -> move DOWN to: (0,1)
