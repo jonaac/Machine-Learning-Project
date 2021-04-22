@@ -1,11 +1,67 @@
-## Safety for Intelligent Agents
+# Safety for Intelligent Agents
 
-The use of machine learning techniques to build autonomous agents/systems is becoming more widespread as designing agents by hand is costly.  Moreover, agents often operate in stochastic domains where it may be difficult to identify effective policies/strategies.  However, the increasing use of machine learning techniques (e.g., reinforcement learning, neural nets and deep learning, genetic programming) to build agents has given rise to widespread concerns over whether such systems are safe to deploy.  One reason for this is that some scenarios that threaten safety may be very infrequent and it is hard to ensure that the training set includes enough of these to ensure that safety-preserving behaviors are learned. Another reason is that many machine learning techniques construct their own representations of the domain (e.g., deep learning) and it is hard to ensure that these representations carry the necessary information to ensure safety, and that the resulting policies/strategies are safe. 
+This project is my introduction to RL and safe RL. I develop two grid-world simulation and RL algorithms from scratch, no ML or RL libraries, to experiment and test safety methods. After developing, training and deploying the agents I was able to achieve my goal. For every environment the agent was able to learn an optimal policy (shortest route) without falling into any crater.
 
-Outside of the Machine Learning field, in the area of Formal Methods, there has been a lot of work on techniques to ensure that computer systems satisfy given specifications, including safety.  One relevant line of work addresses verification and synthesis of reactive systems.  Another line of work is concerned with supervision of discrete event systems to ensure that they satisfy a given supervision specification.  There is a lot of interest in exploiting such techniques to ensure safety of machine learning-based systems.
+<p align="center">
+  <ul style="list-style-type:none;">
+    <li style="display:inline-block;"><img width="250" src="https://ibb.co/mBYY3Vq"></li>
+    <li style="display:inline-block;"><img width="250" src="https://ibb.co/zQsV4sg"></li>
+  </ul>
+</p>
 
-This research project has two main objectives: 
-1. Developed a reinforcement Learning grid-world simulation from scratch (no ML or RL libraries) to experiment and test safety methods for intelligent agents.
-2. To research the literature on the safety of systems built using machine learning techniques
+## Getting Started
 
-The simulation developed is a planetary robot that moves around in a grid world collecting mineral ore and avoiding falling into craters through machine learning and reinforcement algorithms.
+A list of all the prerequisites you'll need to run the experiments and the files the code will generate with the parameters to load the CNN and CNN+XGBoost models for each iteration.
+
+### Prerequisites
+
+```
+Python
+Keras
+tensorflow
+xgboost
+sklearn
+numpy
+scipy
+pickle
+```
+
+### Files Needed
+
+## Running Experiments
+
+For each iteration, I train the original CNN model, I used the train model to generate the CNN+XGBoost model and I compare the accoracy of each model. Download this repository and run the following code for each CNN+XGboost model:
+
+### Baseline
+```
+cd code/baseline/
+python3 cnn.py
+python3 cnn_xgboost.py
+python3 accuracy_baseline.py
+```
+### VGG16
+```
+cd code/vgg16/
+python3 cnn_vgg16.py
+python3 cnn_vgg16_xgboost.py
+python3 acuoracy_vgg16.py
+```
+
+
+## Results
+
+
+## Files
+```
+code ---|- baseline --|-- cnn.py
+	|    	      |-- cnn_xgboost.py
+	|    	      |-- accuracy_baseline.py
+	|
+	|- resnet ----|-- cnn_resnet.py
+	|    	      |-- cnn_resnet_xgboost.py
+	|    	      |-- accuracy_resnet.py
+	|
+	|- vgg16 -----|-- cnn_vgg.py
+	     	      |-- cnn_vgg_xgboots.py
+	     	      |-- accuracy_vgg16.py
+```
