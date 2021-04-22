@@ -36,15 +36,15 @@ For each environment run the following code to reproduce the experiment. It will
 
 ### Navigation
 ```
-python3 grid-world.py < input.txt
-python3 grid-world.py < input-2.txt
-python3 grid-world.py < input-3.txt
+python3 grid-world.py < <path>/input.txt
+python3 grid-world.py < <path>/input-2.txt
+python3 grid-world.py < <path>/input-3.txt
 ```
 ### Mineral Collection
 ```
-python3 mineral-world.py < input.txt
-python3 mineral-world.py < input-2.txt
-python3 mineral-world.py < input-3.txt
+python3 mineral-world.py < <path>/input.txt
+python3 mineral-world.py < <path>/input-2.txt
+python3 mineral-world.py < <path>/input-3.txt
 ```
 
 ## Results
@@ -96,17 +96,23 @@ CONGRATULATIONS!
 SAFETY DATA: Your Rover has fallen 0 time/s.
 ```
 
-## Files
+## Custom Environments
+
+If you want to develop you own environment to test the algorithms you can generate a file with the following content:
+
 ```
-code ---|- baseline --|-- cnn.py
-	|    	      |-- cnn_xgboost.py
-	|    	      |-- accuracy_baseline.py
-	|
-	|- resnet ----|-- cnn_resnet.py
-	|    	      |-- cnn_resnet_xgboost.py
-	|    	      |-- accuracy_resnet.py
-	|
-	|- vgg16 -----|-- cnn_vgg.py
-	     	      |-- cnn_vgg_xgboots.py
-	     	      |-- accuracy_vgg16.py
+1. n: Number of states, then the set of states to be considered will be [0, n-1]
+2. m: Number of action, then the set of actins to be considered will be [0, m-1]
+3. flag: {0,1} s.t. 1 if the environment is non-deterministic and 0 if it’s deterministic
+4. 𝒔𝟎: Initial state of our agent
+5. 𝒔𝒈𝒐𝒂𝒍: Goal state of out agent
+6. [(𝒔𝟏, 𝒓𝟏), . . . , (𝒔𝒅, 𝒓𝒅)] : Set of state reward pairs, which indicated what reward will an
+agent obtain if it where to land in state 𝑠i
+7. [𝒔𝟏, . . . , 𝒔𝒌]: Set of unsafe states.
+8. i: Number of iterations for Q-learning algorithm convergence.
+9. T: 𝑛×𝑚, Transition Matrix s.t. for all states 𝑠 and action 𝑎, 𝑇[𝑠][𝑎] will indicate what
+state should an agent go to if it’s currently in state 𝑠 and performs action 𝑎. If the
+environment is non-deterministic this will be left empty.
+10. 𝑷𝒂 𝒔𝒂 𝒔 : Probability distribution s.t. for all state-action pairs (𝑠, 𝑎), 𝑃; will return the
+probability of ending in a successor state 𝒔𝒂 after performing
 ```
