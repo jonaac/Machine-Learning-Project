@@ -50,6 +50,7 @@ python3 mineral-world.py < input-3.txt
 ## Results
 
 ### Navigation
+<p><img width="200" src="https://jonaac.github.io/img/navigation.gif" /></p>
 ```
 NAVIGATION DOMAIN:
 from (0,0) -> move DOWN to: (0,1)
@@ -65,12 +66,9 @@ CONGRATULATIONS!
 SAFETY DATA: Your Rover has fallen 0
 time/s.
 ```
-<p align="center">
-	<img width="250" src="https://jonaac.github.io/img/navigation.gif" />
-</p>
 
 ### Mineral Collection
-
+<p><img width="200" src="https://jonaac.github.io/img/mineral.gif" /></p>
 ```
 MINERAL COLLECTION DOMAIN
 from (0,0) -> move DOWN to: (0,1)
@@ -95,9 +93,6 @@ You are back in BASE with the MINERALS,
 CONGRATULATIONS!
 SAFETY DATA: Your Rover has fallen 0 time/s.
 ```
-<p align="center">
-	<img width="250" src="https://jonaac.github.io/img/mineral.gif" />
-</p>
 
 ## Files
 ```
