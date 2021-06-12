@@ -1,5 +1,7 @@
 # Safety for Intelligent Agents
 
+This project was developed Winter 2018
+
 This project is my introduction to RL and safe RL. I develop two grid-world simulation and RL algorithms from scratch, with no ML or RL libraries, to experiment and test safety methods. After training and deploying the agents, I was able to achieve my goal. For every environment, the agent was capable of learning an optimal policy while staying safe.
 
 ## Grid-World Environments
